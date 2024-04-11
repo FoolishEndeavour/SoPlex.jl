@@ -2,8 +2,6 @@
 #      Supported objectives
 # =============================================
 
-MOI.supports(::Optimizer, ::MOI.ObjectiveSense) = false
-
 function MOI.set(
     model::Optimizer{T},
     ::MOI.ObjectiveSense,
