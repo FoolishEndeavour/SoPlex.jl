@@ -338,17 +338,6 @@ end
 function MOI.get(
     model::Optimizer,
     ::MOI.ListOfConstraintIndices{MOI.ScalarAffineFunction{T},S},
-) where {T<: FloatOrRational, S<:_SCALAR_SETS}
-    indices = MOI.ConstraintIndex{MOI.ScalarAffineFunction{T},S}[
-        MOI.ConstraintIndex{MOI.ScalarAffineFunction{T},S}(key.value)
-        for (key, info) in model.affine_constraint_info if _set(info) isa S
-    ]
-    return sort!(indices; by = x -> x.value)
-end
-
-function MOI.get(
-    model::Optimizer,
-    ::MOI.ListOfConstraintIndices{MOI.ScalarAffineFunction{T},S},
 ) where { T <: FloatOrRational, S<:_SCALAR_SETS}
     indices = MOI.ConstraintIndex{MOI.ScalarAffineFunction{T},S}[
         MOI.ConstraintIndex{MOI.ScalarAffineFunction{T},S}(key.value)
