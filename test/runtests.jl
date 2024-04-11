@@ -8,8 +8,8 @@ using Test
     SoPlex.SoPlex_free(soplex)
 end
 
+# add tests for SoPlex
+include("SoPlex_native.jl")
+
 # add tests for MOI wrapper
 include("MOI_wrapper.jl")
-
-# add tests for SoPlex
-include("SoPlex.jl")
