@@ -6,3 +6,4 @@ deps/deps.jl
 deps/build.log
 Manifest.toml
 *.swp
+.DS_Store
